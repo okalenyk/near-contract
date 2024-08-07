@@ -1,0 +1,19 @@
+[package]
+name = "token-account"
+version = "0.0.1"
+edition = "2021"
+publish = false
+
+[profile.release]
+codegen-units = 1
+opt-level = "s"
+lto = true
+debug = false
+panic = "abort"
+overflow-checks = true
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+near-sdk = { version = "5.2.1", features = ["unit-testing"] }
